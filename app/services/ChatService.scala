@@ -22,7 +22,7 @@ object ChatService {
   //  - Add a new message to `postedMessages`
   def chat(author: String, text: String): Message = {
   	val message = Message(author,text)
-    postedMessages :+ message
+    postedMessages = postedMessages :+ message
     message
   }
 }

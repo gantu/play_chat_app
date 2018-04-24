@@ -4,11 +4,15 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
 
-GET /chat                       controllers.HomeController.index
-GET /chat/:text                 controllers.HomeController.submitMessage(text: String)
-GET /login/:username/:password  controllers.AuthController.login(username: String, password: String)
+GET     /                       controllers.HomeController.index
+
+GET /chat						controllers.HomeController.index
++ nocsrf                       
+POST /chat		               controllers.HomeController.submitMessage
+GET /login 						controllers.AuthController.login
++ nocsrf
+POST /login						controllers.AuthController.submitLogin
 
 
 # Map static resources from the /public folder to the /assets URL path
